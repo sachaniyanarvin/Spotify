@@ -40,7 +40,7 @@ function MainMenu() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div>  
         </div>
     );
 }
