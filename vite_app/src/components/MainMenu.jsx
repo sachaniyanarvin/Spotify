@@ -1,70 +1,44 @@
-import './MainMenu/MainMenu.css'
+import './MainMenu/Sidebar.css';
 
-function MainMenu () {
+function Sidebar() {
+    const menuItems = [
+        { icon: 'fas fa-home', text: 'Home', active: true },
+        { icon: 'fas fa-search', text: 'Search' },
+        { icon: 'fas fa-book', text: 'Your Library' },
+        { icon: 'fas fa-plus-square', text: 'Create Playlist' },
+        { icon: 'fas fa-heart', text: 'Liked Songs' },
+        { icon: 'fas fa-podcast', text: 'Your Episodes' },
+    ];
+
+    const favoriteItems = [
+        'FAV',
+        'Daily Mix 1',
+        'Discover Weekly',
+        'Malayalam',
+        'Dance / Electronic Mix',
+        'EDM / Popular',
+    ];
+
     return (
-        <>
-        <div className="main-content">
-                <h1>Good morning</h1>
-                <div className="playlist">
-                    <div>
-                        <img alt="Liked Songs" height="50" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/Liked.png?raw=true" width="50" />
-                        <p>Liked Songs</p>
-                    </div>
-                    <div>
-                        <img alt="Neffex Playlist" height="50" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image4.png?raw=true" width="50" />
-                        <p>Neffex Playlist</p>
-                    </div>
-                    <div>
-                        <img alt="K/DA" height="50" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/palylist.png?raw=true" width="50" />
-                        <p>K/DA</p>
-                    </div>
-                    <div>
-                        <img alt="Liked Songs" height="50" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image1.png?raw=true" width="50" />
-                        <p>Liked Songs</p>
-                    </div>
-                    <div>
-                        <img alt="Dance / Electronic Mix" height="50" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image2.png?raw=true" width="50" />
-                        <p>Dance / Electronic Mix</p>
-                    </div>
-                </div>
-                <div className="shows">
-                    <h2>Shows you might like</h2>
-                    <div className="show-list">
-                        <div>
-                            <img alt="Weekly Motivation" height="150" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image9.png?raw=true" width="150" />
-                            <p>Weekly Motivation</p>
-                            <p>Ben Ina Scott</p>
-                        </div>
-                        <div>
-                            <img alt="Meditation Self" height="150" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image8.png?raw=true" width="150" />
-                            <p>Meditation Self</p>
-                            <p>Ubn Hussein Aleen</p>
-                        </div>
-                        <div>
-                            <img alt="Words beyond actions" height="150" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image7.png?raw=true" width="150" />
-                            <p>Words beyond actions</p>
-                            <p>Samuel Scott</p>
-                        </div>
-                        <div>
-                            <img alt="Words beyond actions" height="150" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image6.png?raw=true" width="150" />
-                            <p>Words beyond actions</p>
-                            <p>Samuel Scott</p>
-                        </div>
-                        <div>
-                            <img alt="Words beyond actions" height="150" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image5.png?raw=true" width="150" />
-                            <p>Words beyond actions</p>
-                            <p>Samuel Scott</p>
-                        </div>
-                        <div>
-                            <img alt="Words beyond actions" height="150" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image10.png?raw=true" width="150" />
-                            <p>Words beyond actions</p>
-                            <p>Samuel Scott</p>
-                        </div>
-                    </div>
-                </div>
+        <div className="sidebar">
+            <img alt="Spotify Logo" height="40" src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/Spotify%20logo.png?raw=true" width="131" />
+            {menuItems.map((item, index) => (
+                <a key={index} className={item.active ? 'active' : ''} href="#">
+                    <i className={item.icon}></i>
+                    {item.text}
+                </a>
+            ))}
+            <div style={{ marginTop: '20px' }}>
+                {favoriteItems.map((item, index) => (
+                    <a key={index} href="#">{item}</a>
+                ))}
             </div>
-        </>
-    )
+            <a href="#" style={{ marginTop: '20px' }}>
+                <i className="fas fa-download"></i>
+                Install App
+            </a>
+        </div>
+    );
 }
 
-export default MainMenu;
+export default Sidebar;
