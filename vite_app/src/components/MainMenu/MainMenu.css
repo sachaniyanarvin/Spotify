@@ -1,0 +1,49 @@
+.main-content {
+    margin-left: 240px;
+    padding: 20px;
+}
+.main-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.playlist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.playlist div {
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 4px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.playlist img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+}
+.shows {
+    margin-top: 20px;
+}
+.shows h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.shows .show-list {
+    display: flex;
+    gap: 10px;
+}
+.shows .show-list div {
+    background-color: #282828;
+    padding: 10px;
+    border-radius: 4px;
+    width: 150px;
+    text-align: center;
+}
+.shows .show-list img {
+    width: 100%;
+    border-radius: 4px;
+}
